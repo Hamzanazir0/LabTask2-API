@@ -4,7 +4,50 @@ $(document).ready(function () {
   $("#btn1").on("click", addData);
   $("#btn2").on("click", editData);
   $("#btn3").on("click", delData);
+  $("#btnfetch1").on("click", get1Result);
+  $("#btnget1").on("click", get1Bindings);
 });
+
+function get1Bindings() {
+  $("#idInput").val("");
+
+  $("#btn2").removeClass("down");
+  $("#btn3").removeClass("deldown");
+  $(".prod").css("cursor", "context-menu");
+  $("#editalert").fadeOut(1000);
+  $("#delalert").fadeOut(1000);
+  $(".record").unbind();
+  $(".prod").removeAttr("data-target");
+}
+
+function get1Result() {
+  var id = $("#idInput").val();
+  console.log("Id to be Found = " + id);
+  $.ajax({
+    url: "https://usman-recipes.herokuapp.com/api/products/" + id,
+    method: "GET",
+    success: function (response) {
+      var record = $(".record");
+      record.empty();
+      var dat = response;
+      record.append(
+        "<div class='prod' data-id= " +
+          dat._id +
+          " >I am <h4>" +
+          dat.name +
+          "</h4> and my price is <h4>" +
+          dat.price +
+          "</h4> i am <h4>" +
+          dat.color +
+          "</h4> in color. My department is <h4>" +
+          dat.department +
+          "</h4>. <br/> <h5> Description: </h5>" +
+          dat.description +
+          " </div>"
+      );
+    },
+  });
+}
 
 function getData() {
   $("#btn2").removeClass("down");
