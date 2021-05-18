@@ -1,21 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>API Calls</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Jquery -->
     <script
-        src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous">
-    </script>
-    
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Plugin For Confirmation -->
     <script src="./confirmationplugin.js"></script>
@@ -25,165 +36,240 @@
     <script src="./formvalid.js"></script>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
     <!-- My Css -->
-    <link rel="stylesheet" href="./style.css">
-
-
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body class="container">
-      
     <div class="sitewrapper">
+      <!--------------------------- Heading --------------------------->
 
-        <!--------------------------- Heading --------------------------->
-        
-        <div class="heading ">
-            <h1>API Management</h1>
-        </div>
+      <div class="heading">
+        <h1>API Management</h1>
+      </div>
 
-        <!--------------------------- Heading --------------------------->
+      <!--------------------------- Heading --------------------------->
 
-        <div class="datacontainer">
-
+      <div class="datacontainer">
         <!--------------------------- Buttons --------------------------->
 
-            <button id="btn" class="btn btn-primary">
-                Load Data
-            </button>
+        <button id="btn" class="btn btn-primary">Load Data</button>
 
-            <!-------------------- Right Buttons Group --------------------->
+        <!-------------------- Right Buttons Group --------------------->
 
-            <div class="buttons float-right">
-                <button id="btn1" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
-                    Add Record
-                </button>
-                <button id="btn2" class="btn btn-warning">
-                    Edit Record
-                </button>
-                <button id="btn3" class="btn btn-danger">
-                    Delete Record
-                </button>
-            </div>
+        <div class="buttons float-right">
+          <button
+            id="btn1"
+            class="btn btn-success"
+            data-toggle="modal"
+            data-target="#exampleModalCenter"
+          >
+            Add Record
+          </button>
+          <button id="btn2" class="btn btn-warning">Edit Record</button>
+          <button id="btn3" class="btn btn-danger">Delete Record</button>
+        </div>
 
-            <!-------------------- Right Buttons Group --------------------->
+        <!-------------------- Right Buttons Group --------------------->
 
         <!--------------------------- Buttons --------------------------->
 
         <!---------------------------  Alerts --------------------------->
 
-        <div class="alert alert-success hidden" role="alert" style="display: none;" id="alert">
-            Data Added Successfully
+        <div
+          class="alert alert-success hidden"
+          role="alert"
+          style="display: none"
+          id="alert"
+        >
+          Data Added Successfully
         </div>
-        
-        <div class="alert alert-success hidden" role="alert" style="display: none;" id="changedalert">
-            Data Edited Successfully
+
+        <div
+          class="alert alert-success hidden"
+          role="alert"
+          style="display: none"
+          id="changedalert"
+        >
+          Data Edited Successfully
         </div>
-        
-        <div class="alert alert-danger hidden" role="alert" style="display: none;" id="delsuccessalert">
-            Data Deleted Successfully
+
+        <div
+          class="alert alert-danger hidden"
+          role="alert"
+          style="display: none"
+          id="delsuccessalert"
+        >
+          Data Deleted Successfully
         </div>
-        
-        <div class="alert alert-warning hidden" role="alert" style="display: none;" id="editalert">
-            Select The Record You Want To Edit or Press Again To Exit Edit Mode.
+
+        <div
+          class="alert alert-warning hidden"
+          role="alert"
+          style="display: none"
+          id="editalert"
+        >
+          Select The Record You Want To Edit or Press Again To Exit Edit Mode.
         </div>
-        
-        <div class="alert alert-danger hidden" role="alert" style="display: none;" id="delalert">
-            Select The Record You Want To Delete or Press Again To Exit Delete Mode.
+
+        <div
+          class="alert alert-danger hidden"
+          role="alert"
+          style="display: none"
+          id="delalert"
+        >
+          Select The Record You Want To Delete or Press Again To Exit Delete
+          Mode.
         </div>
 
         <!---------------------------  Alerts --------------------------->
 
         <!--------------------------- Data --------------------------->
 
-            <div class="record">
-                
-            </div>
-
+        <div class="record"></div>
 
         <!--------------------------- Data --------------------------->
 
-
         <!--------------------------- Modal --------------------------->
 
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Add Record</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        
-                        <div class="modal-body">
-                            
-                            <form id="addData">
+        <div
+          class="modal fade"
+          id="exampleModalCenter"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">
+                  Add Record
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
 
-                                <div class="form-group">
-                                
-                                    <label for="addName">Name</label>
-                                    <input class="form-control" type="text" placeholder="Type Name of Product Here" id="addName">
-                                    
-                                    <label for="addPrice">Price</label>
-                                    <input class="form-control" type="text" placeholder="Price of Product" id="addPrice">
-        
-                                    <label for="addColor">Color</label>
-                                    <input class="form-control" type="text" placeholder="What is the Color" id="addColor">
-        
-                                    <label for="addDepartment">Department</label>
-                                    <input class="form-control" type="text" placeholder="Department of the Product" id="addDepartment">
-        
-                                    <label for="addDescription">Description</label>
-                                    <textarea class="form-control" rows="3" id="addDescription"></textarea>
-    
-                                </div>
+              <div class="modal-body">
+                <form id="addData">
+                  <div class="form-group">
+                    <label for="addName">Name</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Type Name of Product Here"
+                      id="addName"
+                    />
 
-                            </form>
+                    <label for="addPrice">Price</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Price of Product"
+                      id="addPrice"
+                    />
 
-                        </div>
-                    
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" id="addAdd">Add</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <label for="addColor">Color</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="What is the Color"
+                      id="addColor"
+                    />
 
-        <!--------------------------- Modal --------------------------->
+                    <label for="addDepartment">Department</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Department of the Product"
+                      id="addDepartment"
+                    />
 
+                    <label for="addDescription">Description</label>
+                    <textarea
+                      class="form-control"
+                      rows="3"
+                      id="addDescription"
+                    ></textarea>
+                  </div>
+                </form>
+              </div>
 
-        <!--------------------------- Modal 2 --------------------------->
-
-        <div class="modal fade" id="delmodal" tabindex="-1" role="dialog" aria-labelledby="delmodal" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content border border-danger">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="delmodaltitle">Confirm Delete?</h5>
-                  <button type="button" class="close border border-danger bg-danger" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="tt">Do You Want to Delete The Record of:</div>
-                  <h4 id="modaldeltitle">ABC</h4>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" id="delyes">Yes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary" id="addAdd">
+                  Add
+                </button>
               </div>
             </div>
           </div>
+        </div>
+
+        <!--------------------------- Modal --------------------------->
 
         <!--------------------------- Modal 2 --------------------------->
 
-    
+        <div
+          class="modal fade"
+          id="delmodal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="delmodal"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content border border-danger">
+              <div class="modal-header">
+                <h5 class="modal-title" id="delmodaltitle">Confirm Delete?</h5>
+                <button
+                  type="button"
+                  class="close border border-danger bg-danger"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="tt">Do You Want to Delete The Record of:</div>
+                <h4 id="modaldeltitle">ABC</h4>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="delyes">
+                  Yes
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  No
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
-
+        <!--------------------------- Modal 2 --------------------------->
+      </div>
     </div>
-    
   </body>
 </html>
